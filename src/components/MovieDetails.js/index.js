@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { baseURLs, defaultImgUrl } from "../../constants";
 import useMovieDetails from "../../hooks/useMovieDetails";
 import StarRating from "../StarRating";
+import { FaHome } from "react-icons/fa";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -19,6 +20,7 @@ const MovieDetails = () => {
         <div className="Main">
           <div className="links">
             <Link to={"/"} className="link">
+              <FaHome />
               Home
             </Link>
           </div>
