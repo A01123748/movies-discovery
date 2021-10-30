@@ -1,38 +1,146 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  flex: 1;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.Main {
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+  background: url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/kSNojkWwSZWsYv0Xj1gcq88okzY.jpg")
+    no-repeat top;
+  background-size: 100% 178px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchBarContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 100px;
+  background-color: white;
+  width: 500px;
+  align-self: center;
+  align-items: center;
+}
+
+.SearchBar {
+  flex: 1;
+  width: 400px;
+  height: 45px;
+  font-size: 30;
+  border: 0;
+}
+
+.SearchBar:focus {
+  outline: none;
+}
+
+.SearchIcon {
+  flex: 1;
+  color: #9aa0a6;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.SearchIcon svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.MoviesList {
+  flex: 10;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  grid-auto-rows: 375px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.MoviesList img {
+  width: 250px;
+}
+
+.SearchButton {
+  flex: 1;
+  height: 50px;
+  width: 75px;
+  position: relative;
+}
+
+.MovieCard {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.MovieDetails {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: left !important;
+  flex: 1;
+}
+
+.MovieDetails .img img {
+  width: 400px;
+}
+
+.img {
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+.links {
+  text-align: left !important;
+  margin-top: 171px;
+  /* background-color: red; */
+}
+
+.star {
+  width: 25px;
+  height: 25px;
+}
+
+.star-rating button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.star-rating .on {
+  color: white;
+}
+.star-rating .off {
+  color: yellow;
+}
+
+.star-rating .disabled {
+  cursor: default;
+}
+
+.ImgNotFound {
+  display: block;
+  min-width: 300px;
+  width: 250px;
+  height: 450px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg");
+  background-repeat: no-repeat;
 }
