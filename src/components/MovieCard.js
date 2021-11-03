@@ -11,7 +11,7 @@ const MovieCard = (movie) => {
     <div className="MovieCard" key={movie.id}>
       <Link to={`details/${movie.id}`}>
         <img src={src} alt={movie.title} />
-        {movie.poster_path ? <></> : <p>{movie.title}</p>}
+        {!movie.poster_path && <p>{movie.title}</p>}
       </Link>
     </div>
   );

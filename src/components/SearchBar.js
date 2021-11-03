@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
 import StarRating from "./StarRating";
 
 const SearchBar = ({ text, setText, rating, setRating }) => {
+  const onChange = useCallback(
+    (e) => {
+      setText(e.target.value);
+    },
+    [setText]
+  );
+
   return (
     <>
       <div className="SearchBarContainer">
@@ -18,7 +25,7 @@ const SearchBar = ({ text, setText, rating, setRating }) => {
           className="SearchBar"
           value={text}
           placeholder="Search for a movie..."
-          onChange={(e) => setText(e.target.value)}
+          onChange={onChange}
         />
       </div>
       <StarRating rating={rating} setRating={setRating} />
@@ -26,4 +33,4 @@ const SearchBar = ({ text, setText, rating, setRating }) => {
   );
 };
 
-export default SearchBar;
+export default React.memo(SearchBar);

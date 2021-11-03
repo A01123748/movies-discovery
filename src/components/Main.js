@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import MoviesList from "./MoviesList";
 import SearchBar from "./SearchBar";
 import useSearchMovies from "../hooks/useSearchMovies";
@@ -10,10 +10,17 @@ function Main() {
   const debouncedSearchTerm = useDebounce(text, 500);
   const data = useSearchMovies(debouncedSearchTerm);
   const [rating, setRating] = useState(0);
-  const dispayedData =
-    Object.entries(data).length !== 0
-      ? data?.filter((movie) => movie.vote_average >= rating * 2)
-      : data;
+  const dispayedData = useMemo(
+    () =>
+      Object.entries(data).length !== 0
+        ? data?.filter((movie) => {
+            console.log("filter");
+            return movie.vote_average >= rating * 2;
+          })
+        : data,
+    [data]
+  );
+
   return (
     <div className="App">
       <div className="App-header">
